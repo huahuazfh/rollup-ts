@@ -1,0 +1,17 @@
+.tscache
+.settings
+.vscode
+node_modules
+npm-debug.log
+coverage
+notes.md
+lib
+dist/
+.idea
+.wp-build*/
+*.iml
+*.ipr
+*.iws
+yarn-error.log
+yarn.lock
+package-lock.json
