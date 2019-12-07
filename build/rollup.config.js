@@ -12,7 +12,7 @@ module.exports = [
   {
     input: resolveFile('src/index.ts'),
     output: {
-      file: resolveFile('dist/index.js'),
+      file: resolveFile('lib/index.js'),
       format: 'umd',
       name: 'demo',
     }, 

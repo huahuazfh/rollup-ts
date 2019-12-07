@@ -4,20 +4,11 @@ const path = require('path');
 const serve = require('rollup-plugin-serve');
 const configList = require('./rollup.config');
 const livereload = require('rollup-plugin-livereload');
-const tslint = require('rollup-plugin-tslint');
 
 const resolveFile = function(filePath) {
   return path.join(__dirname, '..', filePath)
 }
-const PORT = 3000;
-
-const devSite = `http://127.0.0.1:${PORT}`;
-const devPath = path.join('example', 'index.html');
-const devUrl = `${devSite}/${devPath}`;
-
-setTimeout(()=>{
-  console.log(`[dev]: ${devUrl}`)
-}, 1000);
+const PORT = 8888;
 
 configList.map((config, index) => {
 
@@ -29,10 +20,12 @@ configList.map((config, index) => {
       ...[
         serve({
           port: PORT,
+          open: true,
+          openPage: '',
           contentBase: [resolveFile('')]
         }),
         livereload({
-          watch: resolveFile('/dist')
+          watch: resolveFile('lib')
         })
       ]
     ]
